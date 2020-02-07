@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title> formularz1 </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="jquery-3.4.1.min.js"></script>
+        </head>
+
+        <body>
+            <div id="kontener"> 
+                <div id="naglowek">
+                    
+                    <h1>Zarezerwuj bilet<img src="m.png" width="20%" style="float:right"></h1>
+                </div>
+
+                <div id="formularz">
+                    <form action="#" method="get" class="form form-horizontal" name="user_form">
+                        <p id= "message"  class="alert-error" style="width:100%"></p>
+                        <p><label>Imię </label><input type="text" id="username" name="user_name"></p>  <p><label>Nazwisko </label><input type="text" id="surname" name="sur_name"></p> 
+                        <p><label>Login </label><input type="text" id="login" name="log"></p>
+                        <p><label>Hasło  </label><input type="password" id="password" name="pass"></p>
+                        <p><lable>Adres </lable><input type="text" id="address" name="add"></p>
+                        <p><label>Kod Pocztowy </label><input type="text" id="postal_code" name="postal_code" pattern="[0-9]{2}-[0-9]{3}" placeholder="xx-xxx"/></p>
+                        <p><label>Email </label><input type="text" id="email" name="email"/></p>
+                        <br>
+                        <br>
+                        <input type="submit" class="btn btn-primary" id="submit" value="Sprawdż czy wszytsko jest ok" onclick="checkLength(document.getElementById('login'),6,12)"/>
+                        <button id="button-sweet">Wyslij</button>
+                        </form>
+                </div>
+
+                <div id="content"></div>
+                <div id="przyciski">
+                <h2>Opcje</h2>
+                <h2><button type="button" class="btn btn-primary" id="view"><span>Podgląd</span></button>
+                <button type="button" class="btn btn-primary" id="print">Drukuj</button>
+                <button type="button" class="btn btn-primary" id="cancel">Anuluj rezerwacje</button>
+                <input type="submit"  id="change" value="Zmień date lub godzine" onmouseover="this.value='Jesteś pewien?'"  onmouseout="this.value= 'Zmień date lub godzine'"></input></h2></div>
+
+               
+                <div id="stopka">&copy; Natalia</div>
+                </div>
+
+                <style> td,th{border: 1px solid black;} table{margin: 0 auto; }
+                </style>
+
+                <script>
+                    function checkLength(field, min_l, max_l) {
+                        var userText = field.value;
+                        if(userText.length >= min_l && userText.length <= max_l) return true;
+                        else {
+                            document.getElementById('message').innerHTML = "Długość loginu musi wynosić od " + min_l + " do " + max_l + " znaków";
+                            return false;
+                        }
+                    }
+
+                   
+                    $('#button-sweet').click(function(){
+                        swal("Sukces!", "Rezerwacja zakończyła się pomyślnie!", "success");
+                    })
+
+                    $('#cancel').click(function(){
+                        swal("Rezerwacja została anulowana!","Wróć do formularza, w celu ponownej rezerwacji biletu", "error");
+                    })
+
+                    var data = {
+            "movies": [
+            {
+                "film":"",
+                "pon" : "PON",
+            "wt" : "WT",
+            "sr" : "ŚR",
+            "czw": "CZW",
+            "pt": "PT"
+            }
+                ,{
+                "film":"Film1",
+                "pon" : "10:30",
+            "wt" : "10:30",
+            "sr" : "17:00",
+            "czw": "17:00",
+            "pt": "17:00"
+            }
+            
+        , {
+            "film":"Film2",
+            "pon" : "10:30",
+            "wt" : "21:15",
+            "sr" : "17:00",
+            "czw": "17:00",
+            "pt":"21:15"
+        },
+        , {
+            "film":"Film3",
+            "pon" : "10:30",
+            "wt" : "10:30",
+            "sr" : "21:15",
+            "czw": "17:00",
+            "pt":"17:00"
+        },
+    ]
+        };
+        var output="<table>";
+            
+        for(var i in data.movies){
+            output+="<tr>";
+            output+= "<th>"+data.movies[i].film + "</th>";
+            output+= "<td>"+data.movies[i].pon + "</td>";
+            output+= "<td>"+data.movies[i].wt+ "</td>";
+            output+= "<td>"+data.movies[i].sr+ "</td>";
+            output+= "<td>"+data.movies[i].czw+ "</td>";
+            output+= "<td>"+data.movies[i].pt+ "</td><br>";
+        }
+        output+="</table>";
+        document.getElementById("content").innerHTML=output;
+                </script>
+                </body>
+              </html>

@@ -1,0 +1,152 @@
+
+
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(75, 78, 75);
+    color:#45330C;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#kontener{
+    width:900px;
+    margin:5px auto;
+    text-align: left;
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+#naglowek{
+    background-color: lightslategray;
+    border-left: 1px solid black;
+}
+
+#naglowek h1{
+    margin-top:0;
+    margin-right:200px;
+    text-align: right;
+    
+}
+#formularz{
+    margin-right: 350px;
+    text-align:right;
+}
+#przyciski{
+    background-color:lightslategray;
+    border-left: 1px solid black;
+    
+}
+#przyciski h2, button{
+    margin: 5px;
+    text-align:center;
+}
+
+#view{
+    padding: 10px 25px;
+    margin:10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+#view:hover{
+    background-color: #15e01c;
+    color: black;
+}
+#view:active{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#print{
+    padding: 10px 25px;
+    margin:10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999; 
+}
+#print:hover{
+   background:url("printer.png");
+   background-repeat:no-repeat;
+   background-position: center;
+   font-weight: 900;
+   color:rgb(0, 0, 0);
+}
+#cancel{
+    padding: 10px 25px;
+    margin:10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999; 
+}
+#change{
+    padding: 10px 25px;
+    margin:10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+#change:hover{
+    color: black;
+}
+
+#submit{
+    padding: 8px 16px;
+    margin:10px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgb(73, 98, 131);
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+#button-sweet{
+    padding: 8px 16px;
+    margin:10px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgb(73, 98, 131);
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+#content table{
+    margin-right:200px;
+    font-size:24px;
+    align:center;
+}
+#stopka{
+    margin-right:5px;
+    text-align: right;
+}
+
+
+
+
